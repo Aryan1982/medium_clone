@@ -1,0 +1,89 @@
+<app-navbar></app-navbar>
+<div class="grid grid-cols-5 mt-24 ">
+  <!-- card section -->
+  <div class="col-start-2 col-span-2 ">
+    <div *ngFor="let article of allArticles ">
+      <a [routerLink]="['/viewer', article._id]" routerLinkActive="active">
+      <!-- card -->
+      <div class="grid grid-rows-[auto_minmax(auto,_1fr)_50px]  m-3 grid-cols-3  border-blue-600 grid-flow-col rounded-lg" style="border: 1px solid #c1c1c1;">
+      <div class= "col-span-2 row-span-2 rounded-tl-lg " >
+        
+    <div class="grid grid-row-2 h-full pl-4">
+
+      <div class="flex items-center">
+        <img class="w-9 h-9 rounded-full mr-2" 
+              src="https://images.unsplash.com/photo-1694033996901-60322b8740dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+              alt="Avatar of User">
+        <h1 class="text-slate-500">{{article.username}}</h1>
+      </div>
+
+      <div class="flex items-center">
+
+        <h2 class="font-medium text-xl">{{article.ops[0].insert}}</h2>
+      </div>
+  
+
+    </div>      
+          
+    </div>
+
+      <div class="pl-4 pr-4 h-full  col-span-3 flex items-center rounded-b-lg" style="border-top: 1px solid #c1c1c1;">
+        <div class="flex justify-between w-full">
+
+
+          <ul class="flex space-x-10" >
+              <i class="fa-regular fa-thumbs-up"></i>
+              <i class="fa-regular fa-share-from-square"></i>
+              <i class="fa-regular fa-comment"></i>
+          </ul>
+          <i class="fa-solid fa-ellipsis"></i>
+        </div>
+      </div>
+    
+      <div class=" row-span-2 rounded-r-lg">
+        <div class="">
+          <img class="w-full object-cover rounded-tr-lg"
+          src="https://images.unsplash.com/photo-1694033996901-60322b8740dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
+          alt="..." >
+          
+        </div>
+      </div>
+      </div>
+      <!-- Card end -->
+      </a>
+      </div>
+     
+    </div>
+ 
+
+    <div class=" grid-flow-col  m-3  col-start-4 w-fit">
+      <!-- Connections -->
+      <div class="flex justify-center">
+        <h1 >All Users</h1>
+      </div>
+
+
+      <div class="max-h-80 flex flex-col p-4  overflow-y-scroll" >
+        <div *ngFor="let user of allUsers">
+          <a [routerLink]="['/profile', user._id]" routerLinkActive="active">
+          <div class="inline-block bg-white rounded-lg p-2 m-2 " style="width: 300px;">
+            <div class="flex items-center">
+              <img class="w-16 h-16 rounded-full mr-4" 
+                  src="https://images.unsplash.com/photo-1694033996901-60322b8740dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" 
+                  alt="Avatar of User">
+              <div class="text-sm">
+                <p class="text-black leading-none">{{user.username}}</p>
+              </div>
+              
+            </div>
+            
+        </div></a>
+        </div>
+
+          
+
+      </div>
+
+
+    </div>
+</div>
